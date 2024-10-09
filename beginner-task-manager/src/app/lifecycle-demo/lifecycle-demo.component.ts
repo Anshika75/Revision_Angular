@@ -3,6 +3,7 @@ import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-lifecycle-demo',
+  standalone: true,
   template: `
     <div>
       <h3>Lifecycle Demo Component</h3>
