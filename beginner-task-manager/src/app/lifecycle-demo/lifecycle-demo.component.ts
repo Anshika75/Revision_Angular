@@ -14,6 +14,7 @@ import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 })
 export class LifecycleDemoComponent implements OnInit, OnDestroy, AfterViewInit {
   
+  // Called once when the component is created
   constructor() {
     console.log('LifecycleDemoComponent Constructor');
   }
