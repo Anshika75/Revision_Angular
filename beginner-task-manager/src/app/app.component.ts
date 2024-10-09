@@ -1,14 +1,25 @@
 // src/app/app.component.ts
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { TaskComponent } from './task/task.component';
+import { FormsModule } from '@angular/forms';
+import { CardComponent } from './card/card.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
-  imports: [TaskComponent, ]
+  styleUrls: ['./app.component.css'],
+  imports:[FormsModule, CommonModule, CardComponent]
 })
+// src/app/app.component.ts
 export class AppComponent {
-  title = 'Task Manager';  // This is the title property
-  description = 'Manage your daily tasks effectively';  // This is the description property
-}
+  title = 'Task Manager';
+
+  task = {
+    name: 'Complete Angular Tutorial',
+    priority: 'High',
+    completed: false
+  };
+  }
+
+

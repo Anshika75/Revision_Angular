@@ -1,0 +1,13 @@
+<!-- src/app/card/card.component.html -->
+<div class="card">
+    <header>
+      <ng-content select="[card-title]"></ng-content>
+    </header>
+    <div class="card-content">
+      <ng-content></ng-content>
+    </div>
+    <footer>
+      <ng-content select="[card-footer]"></ng-content>
+    </footer>
+  </div>
+  

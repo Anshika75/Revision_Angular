@@ -1,0 +1,21 @@
+/* src/app/app.component.css */
+h1 {
+    font-family: Arial, sans-serif;
+  }
+  
+  button {
+    padding: 10px;
+    margin-top: 10px;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    cursor: not-allowed;
+  }
+  
+  div {
+    margin-top: 10px;
+  }
+  

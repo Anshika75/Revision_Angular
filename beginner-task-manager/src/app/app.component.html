@@ -1,3 +1,11 @@
 <!-- src/app/app.component.html -->
-<h1>Welcome to Task Manager</h1>
-<app-task></app-task> <!-- This will display the task component -->
+<h1>{{ title }}</h1>
+
+<!-- Use the CardComponent and project the task details -->
+<app-card>
+  <h2 card-title>Task Details</h2>
+  <p>Task Name: {{ task.name }}</p>
+  <p>Priority: {{ task.priority }}</p>
+  <footer card-footer>Task Status: {{ task.completed ? 'Completed' : 'Incomplete' }}</footer>
+</app-card>
+

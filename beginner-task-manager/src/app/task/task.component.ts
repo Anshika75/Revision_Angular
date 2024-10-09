@@ -1,12 +1,12 @@
 // src/app/task/task.component.ts
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-task',                 // The selector that represents the task component
+  selector: 'app-task',
   standalone: true,
-  templateUrl: './task.component.html',  // Link to the template file
-  styleUrls: ['./task.component.css']    // Link to the style file
+  templateUrl: './task.component.html',
+  styleUrls: ['./task.component.css']
 })
 export class TaskComponent {
-  taskName = 'Complete Angular Tutorial'; // Static task name for now
+  @Input() taskName!: string; // Input property to receive data from the parent
 }
