@@ -12,17 +12,20 @@ import { ButtonComponent } from '../button/button.component';
   imports: [TaskComponent, CommonModule, ButtonComponent]
 })
 export class TaskListComponent {
-  tasks = ['Complete Angular Tutorial', 'Write Documentation', 'Submit Assignment']; // Array of task names
-  addTask() {
-    console.log('Add Task clicked');
-  }
-
-  deleteAllTasks() {
-    console.log('Delete All Tasks clicked');
-  }
-
-  viewCompletedTasks() {
-    console.log('View Completed Tasks clicked');
-  }
-
+  tasks = [
+    { 
+      name: 'Complete Angular project', 
+      priority: 1, 
+      isCompleted: false, 
+      dueDate: new Date(2024, 9, 15), // October 15, 2024
+      cost: 100
+    },
+    { 
+      name: 'Review TypeScript basics', 
+      priority: 2, 
+      isCompleted: true, 
+      dueDate: new Date(2024, 9, 10), // October 10, 2024
+      cost: 50
+    }
+  ];
 }
