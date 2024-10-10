@@ -1,41 +1,32 @@
 <!-- src/app/task/task.component.html -->
-<form (ngSubmit)="onSubmit()" #taskForm="ngForm">
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
     <div>
       <label for="taskName">Task Name:</label>
-      <input
-        type="text"
-        id="taskName"
-        required
-        [(ngModel)]="newTask.name"
-        name="taskName"
-        #taskName="ngModel"
-      />
-      <div *ngIf="taskName.invalid && taskName.touched">
-        Task name is required.
+      <input type="text" id="taskName" formControlName="taskName" />
+      <!-- Display error messages for taskName -->
+      <div *ngIf="taskForm.get('taskName')?.invalid && taskForm.get('taskName')?.touched">
+        <span *ngIf="taskForm.get('taskName')?.errors?.['required']">Task name is required.</span>
+        <span *ngIf="taskForm.get('taskName')?.errors?.['minlength']">Task name must be at least 3 characters long.</span>
       </div>
     </div>
   
     <div>
       <label for="taskPriority">Priority:</label>
-      <input
-        type="number"
-        id="taskPriority"
-        required
-        [(ngModel)]="newTask.priority"
-        name="taskPriority"
-        #taskPriority="ngModel"
-      />
-      <div *ngIf="taskPriority.invalid && taskPriority.touched">
-        Priority is required.
+      <input type="number" id="taskPriority" formControlName="taskPriority" />
+      <!-- Display error messages for taskPriority -->
+      <div *ngIf="taskForm.get('taskPriority')?.invalid && taskForm.get('taskPriority')?.touched">
+        <span *ngIf="taskForm.get('taskPriority')?.errors?.['required']">Priority is required.</span>
+        <span *ngIf="taskForm.get('taskPriority')?.errors?.['min']">Priority must be at least 1.</span>
+        <span *ngIf="taskForm.get('taskPriority')?.errors?.['max']">Priority cannot exceed 5.</span>
       </div>
     </div>
   
     <button type="submit" [disabled]="taskForm.invalid">Add Task</button>
   </form>
-<ul>
+  
+  <ul>
     <li *ngFor="let task of tasks">
       {{ task.name }} - Priority: {{ task.priority }}
     </li>
   </ul>
-  
   
